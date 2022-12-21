@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:online_courses_ui/common/helper/color_helper.dart';
 import 'package:online_courses_ui/common/helper/dimen_helper.dart';
-import 'package:online_courses_ui/view/dashboard/component/custom_course_card.dart';
+import 'package:online_courses_ui/view/dashboard/component/'
+    'custom_course_card.dart';
 
 class DashboardSection extends StatefulWidget {
   const DashboardSection({Key? key}) : super(key: key);
@@ -17,19 +17,15 @@ class DashboardSectionState extends State<DashboardSection> {
   Widget build(BuildContext context) {
     screenWidth ??= MediaQuery.of(context).size.width;
     return Scaffold(
-      backgroundColor: ColorHelper.backgroundColor,
       body: ListView(
         padding: const EdgeInsets.all(
           16.0,
         ),
         children: [
           DimenHelper.largeVerticalPadding,
-          const Text(
-            "Hi, Daria!",
-            style: TextStyle(
-              fontSize: 24,
-              fontWeight: FontWeight.bold,
-            ),
+          Text(
+            "Hi, Khan!",
+            style: Theme.of(context).textTheme.headline3,
           ),
           DimenHelper.mediumVerticalPadding,
           Card(
@@ -39,15 +35,12 @@ class DashboardSectionState extends State<DashboardSection> {
             ),
             child: Row(
               children: [
-                Icon(
+                const Icon(
                   Icons.search,
-                  color: ColorHelper.grey,
                 ),
                 Text(
                   "Search our 1000+ courses",
-                  style: TextStyle(
-                    color: ColorHelper.grey,
-                  ),
+                  style: Theme.of(context).textTheme.bodyText2,
                 )
               ],
             ),
@@ -63,7 +56,6 @@ class DashboardSectionState extends State<DashboardSection> {
                     Expanded(
                       flex: 3,
                       child: Card(
-                        color: ColorHelper.catalogueCardColor,
                         child: Container(
                           width: double.infinity,
                         ),
@@ -93,16 +85,15 @@ class DashboardSectionState extends State<DashboardSection> {
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.stretch,
                                 children: [
-                                  const Expanded(
+                                  Expanded(
                                     child: FittedBox(
                                       alignment: Alignment.centerLeft,
                                       fit: BoxFit.scaleDown,
                                       child: Text(
                                         "Advance your \ncareer now",
-                                        style: TextStyle(
-                                          fontSize: 18,
-                                          fontWeight: FontWeight.bold,
-                                        ),
+                                        style: Theme.of(context)
+                                            .textTheme
+                                            .headline5,
                                       ),
                                     ),
                                   ),
@@ -138,16 +129,13 @@ class DashboardSectionState extends State<DashboardSection> {
           ),
           DimenHelper.largeVerticalPadding,
           Row(
-            children: const [
+            children: [
               Text(
                 "Trending courses",
-                style: TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
-                ),
+                style: Theme.of(context).textTheme.headline4,
               ),
-              Spacer(),
-              Icon(
+              const Spacer(),
+              const Icon(
                 Icons.tune,
               )
             ],

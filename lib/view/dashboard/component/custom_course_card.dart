@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:online_courses_ui/common/helper/color_helper.dart';
 import 'package:online_courses_ui/common/helper/dimen_helper.dart';
 
 class CustomCourseCard extends StatelessWidget {
@@ -22,7 +21,6 @@ class CustomCourseCard extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Card(
-        color: ColorHelper.courseCardColor,
         child: Padding(
           padding: const EdgeInsets.all(
             8.0,
@@ -52,9 +50,7 @@ class CustomCourseCard extends StatelessWidget {
                         alignment: Alignment.centerLeft,
                         child: Text(
                           courseName,
-                          style: const TextStyle(
-                            fontWeight: FontWeight.bold,
-                          ),
+                          style: Theme.of(context).textTheme.headline6,
                         ),
                       ),
                     ),
@@ -63,17 +59,14 @@ class CustomCourseCard extends StatelessWidget {
                     ),
                     Text(
                       courseInfo,
-                      style: TextStyle(
-                        fontSize: 12,
-                        color: ColorHelper.grey,
-                      ),
+                      style: Theme.of(context).textTheme.bodyText2,
                     ),
                     DimenHelper.smallVerticalPadding,
                     Text(
                       coursePrice,
-                      style: const TextStyle(
-                        fontWeight: FontWeight.bold,
-                      ),
+                      style: Theme.of(context).textTheme.bodyText2!.copyWith(
+                            fontWeight: FontWeight.bold,
+                          ),
                     ),
                   ],
                 ),
